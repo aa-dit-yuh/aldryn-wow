@@ -1,0 +1,11 @@
+{% load cms_tags static %}
+{% load sekizai_tags %}
+
+{% addtoblock "css" %}<link href="http://cdn.bootcss.com/animate.css/3.2.6/animate.css" rel="stylesheet"></script>
+{% endaddtoblock %}
+
+<div class="animated{% if instance.infinite %} infinite{% endif %} {{ instance.animation }}">
+    {% for plugin in instance.child_plugin_instances %}
+        {% render_plugin plugin %}
+    {% endfor %}
+</div>

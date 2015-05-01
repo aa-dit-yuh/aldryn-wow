@@ -1,0 +1,4 @@
+include LICENSE.txt
+recursive-include aldryn_wow/templates *
+recursive-include aldryn_wow/migrations *
+recursive-exclude * *.pyc

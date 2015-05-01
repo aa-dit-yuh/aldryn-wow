@@ -1,0 +1,18 @@
+{
+	"name": "aldryn-wow",
+	"description": "django CMS plugin for WOW.js",
+	"url": "https://github.com/narayanaditya95/aldryn-wow",
+	"package-name": "aldryn_wow",
+	"installed-apps": [
+		"django_sekizai",
+		"aldryn_wow",
+	],
+	"author": {
+		"name": "Aditya Narayan",
+		"url": "narayanaditya95.github.io"
+	},
+	"license": {
+		"name": "BSD",
+		"text": "!literal-include LICENSE.txt"
+	}
+}
