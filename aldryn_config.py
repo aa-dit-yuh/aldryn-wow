@@ -1,9 +1,8 @@
-# from aldryn_client import forms
-#
-#
-# class Form(forms.BaseForm):
-#     example = forms.CharField('Your example setting')
-#
-#     def to_settings(self, data, settings):
-#         settings['EXAMPLE_EXAMPLE'] = data['example']
-#         return settings
+# -*- coding: utf-8 -*-
+from aldryn_client import forms
+
+
+class Form(forms.BaseForm):
+
+    def to_settings(self, cleaned_data, settings_dict):
+        return settings_dict

@@ -18,7 +18,7 @@ CLASSIFIERS = [
 ]
 
 setup(
-    name='aldryn_wow',
+    name='aldryn-wow',
     version=__version__,
     description='django CMS plugin for WOW.js and Animate.CSS',
     author='Aditya Narayan',
