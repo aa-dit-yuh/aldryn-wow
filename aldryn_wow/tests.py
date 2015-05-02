@@ -34,5 +34,5 @@ class AnimatePluginTestCase(TestCase, BaseCMSTestCase):
             self.su_password
         )
 
-    def test_something(self):
-        self.assertEqual(2, 1+1)
+    def test_animation(self):
+        pass

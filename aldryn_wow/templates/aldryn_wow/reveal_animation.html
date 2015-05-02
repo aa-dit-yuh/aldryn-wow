@@ -6,7 +6,7 @@
 {% addtoblock "js" %}<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 {% endaddtoblock %}
 
-<div class="wow{% if instance.infinite %} infinite{% endif %} {{ instance.animation }}">
+<div class="wow {{ instance.animation_class }}"{% if instance.duration %} data-wow-duration="{{ instance.duration }}s"{% endif %}{% if instance.delay %} data-wow-delay="{{ instance.delay }}s"{% endif %}{% if instance.offset %} data-wow-offset="{{ instance.offset }}"{% endif %}{% if instance.iteration %} data-wow-iteration="{{ instance.iteration }}"{% endif %}>
     {% for plugin in instance.child_plugin_instances %}
         {% render_plugin plugin %}
     {% endfor %}
