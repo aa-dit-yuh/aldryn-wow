@@ -16,7 +16,7 @@ class Animation(CMSPlugin):
         default=ANIMATION_CHOICES[0][0],
         blank=False,
     )
-    infinite = models.BooleanField(
+    infinite = models.NullBooleanField(
         help_text=_('Infinite Loop'),
     )
 
@@ -34,19 +34,23 @@ class RevealAnimation(CMSPlugin):
     )
     duration = models.PositiveSmallIntegerField(
         help_text=_('Change the animation duration'),
+        null=True
     )
     delay = models.PositiveSmallIntegerField(
         help_text=_('Delay before the animation starts'),
+        null=True,
     )
     offset = models.PositiveSmallIntegerField(
         help_text=_(
             'Distance to start the animation '
             '(related to the browser bottom)'
         ),
+        null=True,
     )
     iteration = models.PositiveSmallIntegerField(
         help_text=_('Number of times the animation is repeated'),
+        null=True,
     )
 
     def __str__(self):
-        return ''.join('wow', _(self.animation_class))
+        return ''.join(('wow ', self.animation_class))
