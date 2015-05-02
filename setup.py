@@ -2,7 +2,10 @@
 from setuptools import setup, find_packages
 from aldryn_wow import __version__
 
-REQUIREMENTS = []
+REQUIREMENTS = [
+    'django_sekizai',
+    'djangocms_admin_style',
+]
 
 CLASSIFIERS = [
     'Development Status :: 2 - Pre-Alpha',
