@@ -34,5 +34,75 @@ class AnimatePluginTestCase(TestCase, BaseCMSTestCase):
             self.su_password
         )
 
-    def test_animation(self):
-        pass
+    def test_animation_simple(self):
+        self.client.login(username=self.su_username, password=self.su_password)
+
+        plugin = api.add_plugin(
+            self.placeholder,
+            AnimationPlugin,
+            self.language,
+            animation_class='fadeInDown',
+        )
+        self.page.publish(self.language)
+        url = self.page.get_absolute_url()
+        response = self.client.get(url)
+
+        self.assertContains(response, 'animate')
+        self.assertEqual(plugin.__str__(), 'fadeInDown')
+
+    def test_animation_infinite(self):
+        self.client.login(username=self.su_username, password=self.su_password)
+
+        plugin = api.add_plugin(
+            self.placeholder,
+            AnimationPlugin,
+            self.language,
+            animation_class='bounce',
+            infinite=True,
+        )
+        self.page.publish(self.language)
+        url = self.page.get_absolute_url()
+        response = self.client.get(url)
+
+        self.assertContains(response, 'animate')
+        self.assertContains(response, 'bounce')
+        self.assertContains(response, 'infinite')
+
+    def test_wow_animation_simple(self):
+        self.client.login(username=self.su_username, password=self.su_password)
+
+        plugin = api.add_plugin(
+            self.placeholder,
+            RevealAnimationPlugin,
+            self.language,
+            animation_class='bounce',
+        )
+        self.page.publish(self.language)
+        url = self.page.get_absolute_url()
+        response = self.client.get(url)
+        self.assertContains(response, 'wow')
+        self.assertEqual(plugin.__str__(), 'wow bounce')
+
+    def test_wow_animation_all(self):
+        self.client.login(username=self.su_username, password=self.su_password)
+
+        plugin = api.add_plugin(
+            self.placeholder,
+            RevealAnimationPlugin,
+            self.language,
+            animation_class='fadeInLeft',
+            duration=1,
+            delay=2,
+            offset=3,
+            iteration=4
+        )
+        self.page.publish(self.language)
+        url = self.page.get_absolute_url()
+        response = self.client.get(url)
+
+        self.assertContains(response, 'wow')
+        self.assertContains(response, 'fadeInLeft')
+        self.assertContains(response, 'data-wow-duration="1s"')
+        self.assertContains(response, 'data-wow-delay="2s"')
+        self.assertContains(response, 'data-wow-offset="3"')
+        self.assertContains(response, 'data-wow-iteration="4"')
