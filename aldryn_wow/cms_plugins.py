@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from django.utils.translation import ugettext_lazy as _
-from django.conf.urls import patterns, url
 
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
@@ -23,10 +22,10 @@ class AnimationPlugin(CMSPluginBase):
 plugin_pool.register_plugin(AnimationPlugin)
 
 
-class RevealAnimationPlugin(CMSPluginBase):
-    model = models.RevealAnimation
+class WOWAnimationPlugin(CMSPluginBase):
+    model = models.WOWAnimation
     name = _("Wow Animation")
-    render_template = 'aldryn_wow/reveal_animation.html'
+    render_template = 'aldryn_wow/wow_animation.html'
     allow_children = True
     cache = True
 
@@ -35,4 +34,4 @@ class RevealAnimationPlugin(CMSPluginBase):
         return context
 
 
-plugin_pool.register_plugin(RevealAnimationPlugin)
+plugin_pool.register_plugin(WOWAnimationPlugin)

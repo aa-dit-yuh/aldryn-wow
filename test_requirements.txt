@@ -1,4 +1,3 @@
-django-cms==3.0.13
 djangocms-helper
 pysqlite
 coverage

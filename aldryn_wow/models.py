@@ -5,7 +5,7 @@ from django.utils.encoding import python_2_unicode_compatible
 
 from cms.models.pluginmodel import CMSPlugin
 
-from .constants import ANIMATION_CHOICES
+from .utils import ANIMATION_CHOICES
 
 
 @python_2_unicode_compatible
@@ -21,11 +21,11 @@ class Animation(CMSPlugin):
     )
 
     def __str__(self):
-        return _(self.animation_class)
+        return ''.join(('Animate ', self.animation_class))
 
 
 @python_2_unicode_compatible
-class RevealAnimation(CMSPlugin):
+class WOWAnimation(CMSPlugin):
     animation_class = models.CharField(
         max_length=25,
         choices=ANIMATION_CHOICES,
@@ -53,4 +53,4 @@ class RevealAnimation(CMSPlugin):
     )
 
     def __str__(self):
-        return ''.join(('wow ', self.animation_class))
+        return ''.join(('WOW ', self.animation_class))

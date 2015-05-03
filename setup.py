@@ -1,37 +1,43 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from setuptools import setup, find_packages
+from setuptools import setup
 from aldryn_wow import __version__
 
-REQUIREMENTS = [
-    'django_sekizai',
-    'djangocms_admin_style',
+
+INSTALL_REQUIRES = [
+    'django-cms>=3.0',
 ]
 
 CLASSIFIERS = [
-    'Development Status :: 2 - Pre-Alpha',
+    'Development Status :: 4 - Beta',
     'Environment :: Web Environment',
     'Framework :: Django',
     'Intended Audience :: Developers',
     'License :: OSI Approved :: BSD License',
     'Operating System :: OS Independent',
     'Programming Language :: Python',
+    'Topic :: Communications',
     'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
-    'Topic :: Software Development',
-    'Topic :: Software Development :: Libraries :: Application Frameworks',
+    'Topic :: Internet :: WWW/HTTP :: Dynamic Content :: Message Boards',
+    "Programming Language :: Python :: 2.7",
+    "Programming Language :: Python :: 3.3",
+    "Programming Language :: Python :: 3.4",
 ]
 
 setup(
     name='aldryn-wow',
     version=__version__,
-    description='django CMS plugin for WOW.js and Animate.CSS',
+    description='Plugin for aldryn to include awesome animations from WOW.js and Animate.css',
     author='Aditya Narayan',
     author_email='narayanaditya95@gmail.com',
     url='https://github.com/narayanaditya95/aldryn-wow',
-    packages=find_packages(),
+    packages=['aldryn_wow', 'aldryn_wow.migrations', 'aldryn_wow.south_migrations'],
+    install_requires=INSTALL_REQUIRES,
     license='LICENSE.txt',
     platforms=['OS Independent'],
-    install_requires=REQUIREMENTS,
     classifiers=CLASSIFIERS,
+    long_description=open('README.md').read(),
     include_package_data=True,
-    zip_safe=False
+    zip_safe=False,
+    test_suite='test_settings.run',
 )

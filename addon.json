@@ -1,10 +1,10 @@
 {
 	"name": "aldryn-wow",
-	"description": "django CMS plugin for WOW.js",
+	"description": "django CMS plugin for WOW.js and Animate.css",
 	"url": "https://github.com/narayanaditya95/aldryn-wow",
 	"package-name": "aldryn-wow",
 	"installed-apps": [
-		"django_sekizai",
+		"cms",
 		"aldryn_wow"
 	],
 	"author": {
