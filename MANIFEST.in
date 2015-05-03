@@ -1,5 +1,6 @@
 include LICENSE
-include README.md
+include README.rst
+include CHANGELOG.rst
 recursive-include */boilerplates *
 recursive-include */templates *
 recursive-include */static *

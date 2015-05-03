@@ -1,18 +1,7 @@
 {
-	"name": "aldryn-wow",
-	"description": "django CMS plugin for WOW.js and Animate.css",
-	"url": "https://github.com/narayanaditya95/aldryn-wow",
 	"package-name": "aldryn-wow",
 	"installed-apps": [
 		"cms",
 		"aldryn_wow"
 	],
-	"author": {
-		"name": "Aditya Narayan",
-		"url": "narayanaditya95.github.io"
-	},
-	"license": {
-		"name": "BSD",
-		"text": "!literal-include LICENSE.txt"
-	}
 }

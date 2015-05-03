@@ -20,10 +20,10 @@ class Migration(SchemaMigration):
         db.create_table(u'aldryn_wow_wowanimation', (
             (u'cmsplugin_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['cms.CMSPlugin'], unique=True, primary_key=True)),
             ('animation_class', self.gf('django.db.models.fields.CharField')(default='bounce', max_length=25)),
-            ('duration', self.gf('django.db.models.fields.PositiveSmallIntegerField')(null=True)),
-            ('delay', self.gf('django.db.models.fields.PositiveSmallIntegerField')(null=True)),
-            ('offset', self.gf('django.db.models.fields.PositiveSmallIntegerField')(null=True)),
-            ('iteration', self.gf('django.db.models.fields.PositiveSmallIntegerField')(null=True)),
+            ('duration', self.gf('django.db.models.fields.PositiveSmallIntegerField')(null=True, blank=True)),
+            ('delay', self.gf('django.db.models.fields.PositiveSmallIntegerField')(null=True, blank=True)),
+            ('offset', self.gf('django.db.models.fields.PositiveSmallIntegerField')(null=True, blank=True)),
+            ('iteration', self.gf('django.db.models.fields.PositiveSmallIntegerField')(null=True, blank=True)),
         ))
         db.send_create_signal(u'aldryn_wow', ['WOWAnimation'])
 
@@ -47,10 +47,10 @@ class Migration(SchemaMigration):
             'Meta': {'object_name': 'WOWAnimation', '_ormbases': ['cms.CMSPlugin']},
             'animation_class': ('django.db.models.fields.CharField', [], {'default': "'bounce'", 'max_length': '25'}),
             u'cmsplugin_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['cms.CMSPlugin']", 'unique': 'True', 'primary_key': 'True'}),
-            'delay': ('django.db.models.fields.PositiveSmallIntegerField', [], {'null': 'True'}),
-            'duration': ('django.db.models.fields.PositiveSmallIntegerField', [], {'null': 'True'}),
-            'iteration': ('django.db.models.fields.PositiveSmallIntegerField', [], {'null': 'True'}),
-            'offset': ('django.db.models.fields.PositiveSmallIntegerField', [], {'null': 'True'})
+            'delay': ('django.db.models.fields.PositiveSmallIntegerField', [], {'null': 'True', 'blank': 'True'}),
+            'duration': ('django.db.models.fields.PositiveSmallIntegerField', [], {'null': 'True', 'blank': 'True'}),
+            'iteration': ('django.db.models.fields.PositiveSmallIntegerField', [], {'null': 'True', 'blank': 'True'}),
+            'offset': ('django.db.models.fields.PositiveSmallIntegerField', [], {'null': 'True', 'blank': 'True'})
         },
         'cms.cmsplugin': {
             'Meta': {'object_name': 'CMSPlugin'},

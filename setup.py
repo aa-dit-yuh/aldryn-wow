@@ -9,7 +9,7 @@ INSTALL_REQUIRES = [
 ]
 
 CLASSIFIERS = [
-    'Development Status :: 4 - Beta',
+    'Development Status :: 5 - Production/Stable',
     'Environment :: Web Environment',
     'Framework :: Django',
     'Intended Audience :: Developers',
@@ -33,10 +33,10 @@ setup(
     url='https://github.com/narayanaditya95/aldryn-wow',
     packages=['aldryn_wow', 'aldryn_wow.migrations', 'aldryn_wow.south_migrations'],
     install_requires=INSTALL_REQUIRES,
-    license='LICENSE.txt',
+    license='LICENSE',
     platforms=['OS Independent'],
     classifiers=CLASSIFIERS,
-    long_description=open('README.md').read(),
+    long_description=open('README.rst').read() + open('CHANGELOG.rst').read(),
     include_package_data=True,
     zip_safe=False,
     test_suite='test_settings.run',
